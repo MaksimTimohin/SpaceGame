@@ -5,6 +5,7 @@ from stats import Stats
 from scores import Scores
 
 
+
 def run():
 
     pygame.init()

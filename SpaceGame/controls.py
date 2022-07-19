@@ -1,7 +1,10 @@
+from pathlib import Path
 import pygame, sys
 from bulet import Bullet
 from ino import Ino
 import time
+
+BASE_DIR = Path(__file__).absolute().parent
 
 def events(screen, gun, bullets):
     """Обработка событий"""
@@ -107,5 +110,5 @@ def check_high_score(stats, sc):
     if stats.score > stats.high_score:
         stats.high_score = stats.score
         sc.image_high_score()
-        with open('highscore.txt', 'w') as f:
+        with open(BASE_DIR / 'highscore.txt', 'w') as f:
             f.write(str(stats.high_score))

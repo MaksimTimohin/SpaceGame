@@ -1,5 +1,8 @@
+from pathlib import Path
 import pygame
 
+BASE_DIR = Path(__file__).absolute().parent
+IMAGES_DIR = BASE_DIR / 'images'
 
 class Ino(pygame.sprite.Sprite):
     """"Класс одного пришёльца"""
@@ -8,7 +11,7 @@ class Ino(pygame.sprite.Sprite):
         """"Инициализируем и задаём начальную позицию"""
         super(Ino, self).__init__()
         self.screen = screen
-        self.image = pygame.image.load('images/pixil-ino.png')
+        self.image = pygame.image.load(IMAGES_DIR / 'pixil-ino.png')
         self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
